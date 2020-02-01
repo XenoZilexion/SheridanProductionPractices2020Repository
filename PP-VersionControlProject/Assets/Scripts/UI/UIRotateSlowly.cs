@@ -15,15 +15,20 @@ public class UIRotateSlowly : MonoBehaviour
     #region Updates
     void Update()
     {
+        if (Input.GetButtonDown("Submit"))
+        {
+            rotationSpeed *= -1;
+        }
+
         if (Input.GetKey("space"))
         {
             finalRotationSpeed = rotationSpeed * rotationSpeedModifier;
-            Debug.Log("success");
         }
         else
         {
             finalRotationSpeed = rotationSpeed;
         }
+
         if (rotateY)
         {
             this.transform.RotateAround(Vector3.zero, Vector3.up, finalRotationSpeed * Time.deltaTime);
@@ -33,6 +38,7 @@ public class UIRotateSlowly : MonoBehaviour
             this.transform.RotateAround(Vector3.zero, Vector3.right, finalRotationSpeed * Time.deltaTime);
         }
        
+        
     }
     #endregion
 }

@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
     public float m_ScreenEdgeBuffer = 4f;           
     public float m_MinSize = 6.5f;
     public float m_MaxZoom = 15;
+    public float rotateSpeed = 1000f;
     [HideInInspector] public Transform[] m_Targets; 
 
 
@@ -26,6 +27,11 @@ public class CameraControl : MonoBehaviour
     {
         Move();
         Zoom();
+        if (Input.GetButton ("Submit"))
+        {
+            Debug.Log("r pressed");
+            this.transform.RotateAround(this.transform.position, Vector3.up, rotateSpeed *Time.fixedDeltaTime);
+        }
     }
     #endregion
     #region Code
