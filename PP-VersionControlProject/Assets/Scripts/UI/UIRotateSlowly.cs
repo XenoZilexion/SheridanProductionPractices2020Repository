@@ -20,7 +20,13 @@ public class UIRotateSlowly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rotateY)
+
+        if (Input.GetButtonDown("Submit"))
+        {
+            //this.transform.RotateAround(Vector3.zero, Vector3.down, rotationSpeed * Time.deltaTime);
+            rotationSpeed *= -1;
+        }
+            if (rotateY)
         {
             this.transform.RotateAround(Vector3.zero, Vector3.up, rotationSpeed * Time.deltaTime);
         }
@@ -29,5 +35,6 @@ public class UIRotateSlowly : MonoBehaviour
             this.transform.RotateAround(Vector3.zero, Vector3.right, rotationSpeed * Time.deltaTime);
         }
        
+        
     }
 }
