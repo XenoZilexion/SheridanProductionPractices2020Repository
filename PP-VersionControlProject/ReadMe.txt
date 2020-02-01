@@ -1,0 +1,1 @@
+Begin Playing from the Main Menu, Player 1: WASD + SPACE, Player 2:ARROW KEYS + ENTER
