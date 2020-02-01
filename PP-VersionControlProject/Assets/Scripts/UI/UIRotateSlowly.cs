@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class UIRotateSlowly : MonoBehaviour
 {
-
+    #region Variables
     public float startRotation = 0;
     public float maxRotation;
     public float rotationSpeed;
-
+    private float finalRotationSpeed;
     public bool rotateY;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float rotationSpeedModifier;
+    #endregion
+    #region Updates
     void Update()
     {
-        if (rotateY)
+        if (Input.GetButtonDown("Submit"))
         {
-            this.transform.RotateAround(Vector3.zero, Vector3.up, rotationSpeed * Time.deltaTime);
+            rotationSpeed *= -1;
+        }
+
+        if (Input.GetKey("space"))
+        {
+            finalRotationSpeed = rotationSpeed * rotationSpeedModifier;
         }
         else
         {
-            this.transform.RotateAround(Vector3.zero, Vector3.right, rotationSpeed * Time.deltaTime);
+            finalRotationSpeed = rotationSpeed;
+        }
+
+        if (rotateY)
+        {
+            this.transform.RotateAround(Vector3.zero, Vector3.up, finalRotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            this.transform.RotateAround(Vector3.zero, Vector3.right, finalRotationSpeed * Time.deltaTime);
         }
        
+        
     }
+    #endregion
 }
