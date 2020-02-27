@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    // array of all food items
     public Food[] foods;
+    // players current stock per item synced by id
     public int[] stock;
+    // players current gold
     public float gold;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // players current reputation (not implemented yet)
+    public float reputation;
 }

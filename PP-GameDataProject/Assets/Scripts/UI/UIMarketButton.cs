@@ -6,22 +6,23 @@ using UnityEngine.UI;
 public class UIMarketButton : MonoBehaviour
 {
     #region variables
+    //reference to food data
     public Food dataReference;
-
+    //ui elements
     public Text nameText;
     public Text priceText;
     public Text stockText;
     public Image art;
-
+    //text colors
     public Color defaultColor;
     public Color disableColor;
-
+    //reference to inventory
     public Inventory inventoryReference;
     #endregion
     #region setup
     // Start is called before the first frame update
     void Start() { 
-
+        // set button using stored food data
         art.sprite = dataReference.rawArt;
         nameText.text = dataReference.itemName;
         priceText.text = "Price for " + dataReference.quantityPerPurchase + ": " + dataReference.price + " gold";
@@ -32,22 +33,21 @@ public class UIMarketButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // adjust buttons
         PriceCheck();
         QuantityCheck();
     }
     #endregion
     #region functions
+    // set price text disable color if can't afford
     void PriceCheck() {
         if (dataReference.price > inventoryReference.gold) {
-            //nameText.color = disableColor;
             priceText.color = disableColor;
-            //stockText.color = disableColor;
         } else {
-            //nameText.color = defaultColor;
             priceText.color = defaultColor;
-            //stockText.color = defaultColor;
         }
     }
+    // set stock text disable color if none in inventory
     void QuantityCheck() {
         if (inventoryReference.stock[dataReference.id]==0) {
             stockText.color = disableColor;
@@ -56,6 +56,7 @@ public class UIMarketButton : MonoBehaviour
         }
         stockText.text = "Currently In Inventory: " + inventoryReference.stock[dataReference.id];
     }
+    // purchase if the player has enough gold
     public void Purchase() {
         if (inventoryReference.gold >= dataReference.price) {
             inventoryReference.gold -= dataReference.price;
