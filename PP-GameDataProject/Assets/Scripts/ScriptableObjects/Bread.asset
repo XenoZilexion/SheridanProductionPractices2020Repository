@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Bread
   rawArt: {fileID: 21300000, guid: 1b3d446344fabde4d902f53db84a1826, type: 3}
   cookedArt: {fileID: 21300000, guid: 1b3d446344fabde4d902f53db84a1826, type: 3}
-  price: 0
+  price: 2
   quantityPerPurchase: 0
   timeToCook: 5
   timeToBurn: 3

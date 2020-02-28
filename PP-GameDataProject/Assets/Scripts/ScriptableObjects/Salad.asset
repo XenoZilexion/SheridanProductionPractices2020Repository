@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Salad
   rawArt: {fileID: 21300000, guid: c77cf8445ec4f2a4988901b7bcf6728b, type: 3}
   cookedArt: {fileID: 21300000, guid: c77cf8445ec4f2a4988901b7bcf6728b, type: 3}
-  price: 0
+  price: 5
   quantityPerPurchase: 0
   timeToCook: 2
   timeToBurn: 1

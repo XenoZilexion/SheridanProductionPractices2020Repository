@@ -26,6 +26,8 @@ public class Cookable : MonoBehaviour
     public float cookTime;
 
     public bool cooking = false;
+    public bool serving = false;
+    public bool preparing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,17 +62,26 @@ public class Cookable : MonoBehaviour
         if (collision.gameObject.layer == 8) {
             cooking = true;
         }
+        if (collision.gameObject.layer == 10) {
+            serving = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.layer == 8) {
             cooking = true;
         }
+        if (collision.gameObject.layer == 10) {
+            serving = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject.layer == 8) {
             cooking = false;
+        }
+        if (collision.gameObject.layer == 10) {
+            serving = false;
         }
     }
 

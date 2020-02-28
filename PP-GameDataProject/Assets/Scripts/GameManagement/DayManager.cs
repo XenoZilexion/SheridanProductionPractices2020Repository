@@ -25,6 +25,8 @@ public class DayManager : MonoBehaviour
 
     public Text resultsText;
     public Text resultsTitle;
+
+    public OrderManager orderReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class DayManager : MonoBehaviour
         dayActive = true;
         //goldAtStartOfDay = inventoryReference.gold;
         inventoryReference.GenerateInventory();
+        orderReference.StartOrders();
     }
 
     void EndOfDay() {
@@ -66,6 +69,9 @@ public class DayManager : MonoBehaviour
             countTexts[x].text = "" + dayCount;
         }
         progressBar.fillAmount = 1-((Time.time - dayStartTime)/ (dayEndTime - dayStartTime));
+        if (progressBar.fillAmount<=.2f) {
+            orderReference.StopOrders();
+        }
         //progressBar.fillAmount = 1 - (Time.time);
         if (dayActive) {
             progressButton.interactable = false;

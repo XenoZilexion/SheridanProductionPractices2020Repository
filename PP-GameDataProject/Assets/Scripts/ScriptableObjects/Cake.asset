@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Cake
   rawArt: {fileID: 21300000, guid: 4f3bfc0dc448c554e8ba9c64a93bb1d0, type: 3}
   cookedArt: {fileID: 21300000, guid: 4f3bfc0dc448c554e8ba9c64a93bb1d0, type: 3}
-  price: 0
+  price: 5
   quantityPerPurchase: 0
   timeToCook: 2
   timeToBurn: 3

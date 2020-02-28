@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Sandwich
   rawArt: {fileID: 21300000, guid: bcbdec4edf0850040a2790b5f3c78835, type: 3}
   cookedArt: {fileID: 21300000, guid: bcbdec4edf0850040a2790b5f3c78835, type: 3}
-  price: 0
+  price: 10
   quantityPerPurchase: 0
   timeToCook: 10
   timeToBurn: 2
