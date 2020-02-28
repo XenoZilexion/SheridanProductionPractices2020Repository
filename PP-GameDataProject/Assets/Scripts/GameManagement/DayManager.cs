@@ -50,13 +50,15 @@ public class DayManager : MonoBehaviour
         dayEndTime = Time.time + dayDuration;
         dayActive = true;
         //goldAtStartOfDay = inventoryReference.gold;
+        inventoryReference.GenerateInventory();
     }
 
     void EndOfDay() {
         dayActive = false;
         resultsTitle.text = "Day " + dayCount + " Results";
         resultsText.text = (inventoryReference.gold - goldAtStartOfDay) + " Gold Earned\n";
-
+        inventoryReference.ClearInventory();
+        
     }
 
     void UpdateUI() {
