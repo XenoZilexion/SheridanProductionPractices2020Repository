@@ -21,7 +21,7 @@ MonoBehaviour:
   timeToCook: 5
   timeToBurn: 3
   timeToSpoil: 90
-  requiredIngredients: 
+  requiredIngredients: 04000000
   optionalIngredients: 
   purchasable: 0
   preparable: 1

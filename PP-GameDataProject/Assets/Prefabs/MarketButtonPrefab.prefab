@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 3510538638440632223}
   - component: {fileID: 3510538638440632222}
   m_Layer: 5
-  m_Name: ButtonPrefab
+  m_Name: MarketButtonPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   itemName: PotatoBread
-  rawArt: {fileID: 0}
-  cookedArt: {fileID: 0}
+  rawArt: {fileID: 21300000, guid: 7e0223443fd7e5e4cbc83038590bf172, type: 3}
+  cookedArt: {fileID: 21300000, guid: 7e0223443fd7e5e4cbc83038590bf172, type: 3}
   price: 0
   quantityPerPurchase: 0
   timeToCook: 4
   timeToBurn: 2
   timeToSpoil: 40
-  requiredIngredients: 
+  requiredIngredients: 0300000007000000
   optionalIngredients: 
   purchasable: 0
   preparable: 1
