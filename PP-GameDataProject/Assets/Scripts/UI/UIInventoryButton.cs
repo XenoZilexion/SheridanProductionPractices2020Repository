@@ -50,7 +50,10 @@ public class UIInventoryButton : MonoBehaviour
     // purchase if the player has enough gold
     public void Unpack() {
         if (inventoryReference.stock[dataReference.id] > 0) {
-            // instantiate food
+            GameObject newFood = Instantiate(foodPrefab, inventoryReference.foodSpot.position, Quaternion.identity);
+            Cookable cookReference = newFood.GetComponent<Cookable>();
+            inventoryReference.activeFood.Add(newFood);
+            inventoryReference.stock[dataReference.id]--;
         }
         else {
 

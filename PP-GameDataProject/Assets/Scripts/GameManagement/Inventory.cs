@@ -16,6 +16,10 @@ public class Inventory : MonoBehaviour {
 
     public List<GameObject> inventoryButtons;
 
+    public List<GameObject> activeFood;
+
+    public Transform foodSpot;
+
     //spacing variables
     public int inventoryButtonVerticalPadding;
     public int inventoryButtonHorizontalPadding;
@@ -27,7 +31,7 @@ public class Inventory : MonoBehaviour {
         int z = 0;
         int y = 0;
         for (int x = 0; x < (stock.Length); x++) {
-            if (stock[x]>0) {
+            if (stock[x]>0&&foods[x].cookable) {
                 GameObject newInventoryButton = Instantiate(buttonPrefab, new Vector3(this.transform.position.x + (z * inventoryButtonHorizontalPadding), this.transform.position.y + (y * inventoryButtonVerticalPadding), this.transform.position.z), Quaternion.identity);
                 UIInventoryButton functionReference = newInventoryButton.GetComponentInChildren<UIInventoryButton>();
                 functionReference.dataReference = foods[x];

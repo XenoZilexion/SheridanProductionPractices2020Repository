@@ -810,6 +810,8 @@ MonoBehaviour:
   buttonPrefab: {fileID: 9198714207371916997, guid: aa4b669f370758b4b98113387b0d356b,
     type: 3}
   inventoryButtons: []
+  activeFood: []
+  foodSpot: {fileID: 1704255972}
   inventoryButtonVerticalPadding: -240
   inventoryButtonHorizontalPadding: 190
   inventoryButtonColumnLimit: 3
@@ -6770,7 +6772,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704255971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1029, y: -231, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
