@@ -49,10 +49,18 @@ public class Inventory : MonoBehaviour {
     }
 
     public void ClearInventory() {
-        inventoryButtons.Clear();
+        while (activeFood.Count > 0) { 
+            GameObject temp = null;
+            temp = activeFood[0];
+            activeFood.Remove(temp);
+            Destroy(temp);
+        }
+
+        while (inventoryButtons.Count > 0) {
+            GameObject temp = null;
+            temp = inventoryButtons[0];
+            inventoryButtons.Remove(temp);
+            Destroy(temp);
+        }
     }
-
-
-
-
 }

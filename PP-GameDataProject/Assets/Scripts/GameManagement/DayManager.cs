@@ -59,7 +59,7 @@ public class DayManager : MonoBehaviour
     void EndOfDay() {
         dayActive = false;
         resultsTitle.text = "Day " + dayCount + " Results";
-        resultsText.text = (inventoryReference.gold - goldAtStartOfDay) + " Gold Earned\n";
+        resultsText.text = (inventoryReference.gold - goldAtStartOfDay) + " Gold Earned\n" + orderReference.orderCount + " Orders Fulfilled\n";
         inventoryReference.ClearInventory();
         
     }
