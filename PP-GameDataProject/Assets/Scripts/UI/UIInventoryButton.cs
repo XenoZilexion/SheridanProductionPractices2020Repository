@@ -52,6 +52,8 @@ public class UIInventoryButton : MonoBehaviour
         if (inventoryReference.stock[dataReference.id] > 0) {
             GameObject newFood = Instantiate(foodPrefab, inventoryReference.foodSpot.position, Quaternion.identity);
             Cookable cookReference = newFood.GetComponent<Cookable>();
+            cookReference.inventoryReference = inventoryReference;
+            cookReference.dataReference = dataReference;
             inventoryReference.activeFood.Add(newFood);
             inventoryReference.stock[dataReference.id]--;
         }

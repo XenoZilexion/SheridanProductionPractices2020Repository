@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4089720262249350198}
   - component: {fileID: 4089720262249350199}
   - component: {fileID: 4089720262249350196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4089720263259051933}
   - component: {fileID: 4089720263259051930}
   - component: {fileID: 4089720263259051931}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FoodPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +146,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da461b47fb6339b44811582faa240227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataReference: {fileID: 0}
+  art: {fileID: 4089720263682531380}
+  outline: {fileID: 1954674132963283792}
+  rawColor: {r: 0.9960785, g: 1, b: 0, a: 1}
+  cookedColor: {r: 0, g: 1, b: 0.0709219, a: 1}
+  spoiledColor: {r: 0.6502509, g: 0, b: 1, a: 1}
+  burntColor: {r: 1, g: 0.0877193, b: 0, a: 1}
+  inventoryReference: {fileID: 0}
+  cooked: 0
+  spoiled: 0
+  burnt: 0
+  spoilTime: 0
+  cookTime: 0
+  cooking: 0
 --- !u!114 &4089720263259051933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +230,7 @@ GameObject:
   - component: {fileID: 4089720263451354275}
   - component: {fileID: 4089720263451354277}
   - component: {fileID: 4089720263451354274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,14 +278,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.3803922, g: 0.3803922, b: 0.3803922, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,7 +306,8 @@ GameObject:
   - component: {fileID: 4089720263682531381}
   - component: {fileID: 4089720263682531383}
   - component: {fileID: 4089720263682531380}
-  m_Layer: 0
+  - component: {fileID: 1954674132963283792}
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,3 +371,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1954674132963283792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089720263682531378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
