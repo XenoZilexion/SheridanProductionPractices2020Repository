@@ -3205,7 +3205,7 @@ MonoBehaviour:
   inventoryReference: {fileID: 241436557}
   goldAtStartOfDay: 0
   reputationAtStartOfDay: 0
-  dayDuration: 3
+  dayDuration: 300
   textColor: {r: 1, g: 1, b: 1, a: 1}
   disabledColor: {r: 0, g: 0, b: 0, a: 0}
   countTexts:
