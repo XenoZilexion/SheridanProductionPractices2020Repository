@@ -24,6 +24,7 @@ public class DayManager : MonoBehaviour
     public Button progressButton;
 
     public Text resultsText;
+    public Text resultsTitle;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +49,14 @@ public class DayManager : MonoBehaviour
         dayStartTime = Time.time;
         dayEndTime = Time.time + dayDuration;
         dayActive = true;
-        goldAtStartOfDay = inventoryReference.gold;
+        //goldAtStartOfDay = inventoryReference.gold;
     }
 
     void EndOfDay() {
         dayActive = false;
-        resultsText.text = "results";
+        resultsTitle.text = "Day " + dayCount + " Results";
+        resultsText.text = (inventoryReference.gold - goldAtStartOfDay) + " Gold Earned\n";
+
     }
 
     void UpdateUI() {
