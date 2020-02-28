@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cookable : MonoBehaviour
-{
+public class Cookable : MonoBehaviour {
+    #region variables
     //reference to food data
     public Food dataReference;
     //ui elements
@@ -17,34 +17,35 @@ public class Cookable : MonoBehaviour
     public Color burntColor;
     //reference to inventory
     public Inventory inventoryReference;
-
+    // state triggers
     public bool cooked = false;
     public bool spoiled = false;
-   public  bool burnt = false;
-
+    public bool burnt = false;
+    // time spent in either state
     public float spoilTime;
     public float cookTime;
-
+    // present area
     public bool cooking = false;
     public bool serving = false;
     public bool preparing = false;
-
+    #endregion
+    #region setup
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         art.sprite = dataReference.rawArt;
         outline.effectColor = rawColor;
     }
-
+    #endregion
+    #region updates
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        // progress age based on state
         if (cooking) {
             cookTime += Time.deltaTime;
         } else {
             spoilTime += Time.deltaTime;
         }
-
+        // set state triggers based on age
         if (spoilTime >= dataReference.timeToSpoil) {
             spoiled = true;
         }
@@ -57,7 +58,9 @@ public class Cookable : MonoBehaviour
         }
         StateColor();
     }
-
+    #endregion
+    #region areas
+    // set area triggers
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == 8) {
             cooking = true;
@@ -84,7 +87,8 @@ public class Cookable : MonoBehaviour
             serving = false;
         }
     }
-
+    #endregion
+    // color setting heiarchy, spoiled is the worst
     void StateColor() {
         if (!cooked && !burnt && !spoiled) {
             outline.effectColor = rawColor;

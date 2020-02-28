@@ -17,7 +17,7 @@ public class UIGoldCounter : MonoBehaviour {
     #region updates
     // Update is called once per frame
     void Update() {
-        // constantly adjust gold counter
+        //  adjust gold counter
         if (inventoryReference.gold > 0) {
             counter.color = goldColor;
         } else {

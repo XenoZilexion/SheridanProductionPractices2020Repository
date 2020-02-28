@@ -9,7 +9,7 @@ public class CameraManager : MonoBehaviour
     public enum gameState { MainMenu, Market, Prep, Cooking, Results}
     public gameState currentState = gameState.MainMenu;
     #endregion
-
+    #region stateSwitching
     public void Update() { 
         // automatically relocates camera based on gameState 
         switch (currentState) {
@@ -30,10 +30,9 @@ public class CameraManager : MonoBehaviour
                 break;
         }
     }
-
     // public function to change state from other managers
     public void ChangeCameraLocation(gameState state) {
         currentState = state;
     }
-   
+    #endregion
 }

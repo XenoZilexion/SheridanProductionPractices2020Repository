@@ -6,7 +6,7 @@ public class NewGame : MonoBehaviour
 {
    //simple script to set New Game parameters
    public Inventory inventoryReference;
-    public DayManager dayReference;
+   public DayManager dayReference;
    public float startGold;
    public void StartNewGame() {
         inventoryReference.gold = startGold;

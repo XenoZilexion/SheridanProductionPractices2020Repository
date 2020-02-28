@@ -7,7 +7,7 @@ using UnityEngine;
 public class Food : ScriptableObject { 
     // id used for crafting and ordering
     public int id;
-    // name
+    // name 
     public string itemName;
     // art for raw and cooked state
     public Sprite rawArt;

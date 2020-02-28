@@ -18,7 +18,7 @@ public class UIInventoryButton : MonoBehaviour
     public Color disableColor;
     //reference to inventory
     public Inventory inventoryReference;
-
+    //food object base
     public GameObject foodPrefab;
     #endregion
     #region setup
@@ -49,6 +49,7 @@ public class UIInventoryButton : MonoBehaviour
     }
     // purchase if the player has enough gold
     public void Unpack() {
+        // if the player has stock of the food type, unpack for use in the kitchen, reduce inventory accordingly
         if (inventoryReference.stock[dataReference.id] > 0) {
             GameObject newFood = Instantiate(foodPrefab, inventoryReference.foodSpot.position, Quaternion.identity);
             Cookable cookReference = newFood.GetComponent<Cookable>();

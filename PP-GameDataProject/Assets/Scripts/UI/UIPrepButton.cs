@@ -26,6 +26,7 @@ public class UIPrepButton : MonoBehaviour
         // set button using stored food data
         art.sprite = dataReference.rawArt;
         nameText.text = dataReference.itemName;
+        // read required and optional ingredients and generate list in button.
         ingredientText.text = "Required:";
         foreach (int ingredient in dataReference.requiredIngredients) {
             ingredientText.text += "\n"+inventoryReference.foods[ingredient].itemName + ": " + inventoryReference.stock[ingredient];
@@ -52,6 +53,7 @@ public class UIPrepButton : MonoBehaviour
     #region functions
     // set price text disable color if can't afford
     void IngredientCheck() {
+        // compares ingredients and optional ingredients against inventory stock and adjusts text colors appropriately
         bool canCraft = true;
         foreach (int ingredient in dataReference.requiredIngredients) {
             if (inventoryReference.stock[ingredient]<=0) {
@@ -87,7 +89,7 @@ public class UIPrepButton : MonoBehaviour
         }
         stockText.text = "Currently In Inventory: " + inventoryReference.stock[dataReference.id];
     }
-    // purchase if the player has enough gold
+    // create if the player has the ingredients, optional ingredients will be used to increase quality (not yet implemented)
     public void Purchase() {
         bool canCraft = true;
         foreach (int ingredient in dataReference.requiredIngredients) {
@@ -95,7 +97,6 @@ public class UIPrepButton : MonoBehaviour
                 canCraft = false;
             }
         }
-        //Debug.Log(canCraft);
         if (canCraft) {
             foreach (int ingredient in dataReference.requiredIngredients) {
                 inventoryReference.stock[ingredient]--;    

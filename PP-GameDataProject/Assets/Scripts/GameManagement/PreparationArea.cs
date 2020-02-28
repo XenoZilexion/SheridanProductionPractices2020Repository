@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PreparationArea : MonoBehaviour
 {
+    // WIP
     public Inventory inventoryReference;
 
     public GameObject foodPrefab;

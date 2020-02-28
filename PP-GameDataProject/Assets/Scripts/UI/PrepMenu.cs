@@ -20,7 +20,7 @@ public class PrepMenu : MonoBehaviour {
     #endregion
     #region setup
     void Start() {
-        //loop to initialize market buttons by column
+        //loop to initialize peparation buttons by column
         int z = 0;
         for (int x = 0; x < (prepStock.Length) && z < prepStock.Length; x++) {
             for (int y = 0; y < prepButtonColumnLimit && z < prepStock.Length; y++) {

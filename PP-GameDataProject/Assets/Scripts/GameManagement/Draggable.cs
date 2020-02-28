@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-
+    // simple drag code for intaracting with foods
+    // improve if time allows
+    #region variables
+        // dragging state
     bool dragging = false;
+    // offset to avoid center snap
     float xOffset;
     float yOffset;
-    
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    #region dragging
+    // constant drag
     void Update()
     {
         if (dragging) {
@@ -27,6 +26,7 @@ public class Draggable : MonoBehaviour
         }
     }
 
+    // begin drag
     private void OnMouseDown() {
         if (Input.GetMouseButtonDown(0)) {
             Vector3 mousePosition;
@@ -40,12 +40,9 @@ public class Draggable : MonoBehaviour
         }
        
     }
-
-    private void OnMouseDrag() {
-        
-    }
-
+    // release drag state
     private void OnMouseUp() {
         dragging = false;
     }
+    #endregion
 }
