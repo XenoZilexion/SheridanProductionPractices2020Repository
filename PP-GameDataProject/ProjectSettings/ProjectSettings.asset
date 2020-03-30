@@ -639,10 +639,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: e9f3634a-8ec3-4737-a9cd-ca2e64f9907b
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: PP-GameDataProject
+  organizationId: xenozilexion
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class UIPrepButton : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class UIPrepButton : MonoBehaviour
     public Color disableColor;
     //reference to inventory
     public Inventory inventoryReference;
+
+    public AnalyticsEventTracker success;
+    public AnalyticsEventTracker fail;
     #endregion
     #region setup
     // Start is called before the first frame update
@@ -107,8 +111,12 @@ public class UIPrepButton : MonoBehaviour
                 }
             }
             inventoryReference.stock[dataReference.id]++;
+            Debug.Log("successful prep check");
+            success.TriggerEvent();
         } else {
-           
+
+            Debug.Log("failed prep check");
+            fail.TriggerEvent();
         }
     }
     #endregion

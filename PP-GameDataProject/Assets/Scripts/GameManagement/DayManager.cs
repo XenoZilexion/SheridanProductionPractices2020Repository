@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 
 public class DayManager : MonoBehaviour {
@@ -33,6 +34,13 @@ public class DayManager : MonoBehaviour {
     public Text resultsTitle;
     // reference to order management
     public OrderManager orderReference;
+
+    public float sessionDuration;
+
+    public float profit;
+    public AnalyticsEventTracker profitAnalyticEvent;
+    public AnalyticsEventTracker orderFulfilledAnalyticEvent;
+    public AnalyticsEventTracker orderSkippedAnalyticEvent;
     #endregion
 
     #region updates
@@ -43,6 +51,8 @@ public class DayManager : MonoBehaviour {
         if (Time.time >= dayEndTime && dayActive) {
             EndOfDay();
         }
+
+        sessionDuration = Time.time;
     }
     #endregion
     #region functions
@@ -63,9 +73,15 @@ public class DayManager : MonoBehaviour {
     void EndOfDay() {
         dayActive = false;
         resultsTitle.text = "Day " + dayCount + " Results";
-        resultsText.text = (inventoryReference.gold - goldAtStartOfDay) + " Gold Earned\n" + orderReference.orderCount + " Orders Fulfilled\n";
+        profit = inventoryReference.gold - goldAtStartOfDay;
+        resultsText.text = (profit) + " Gold Earned\n" + orderReference.orderCount + " Orders Fulfilled\n";
         inventoryReference.ClearInventory();
 
+
+        Debug.Log("tri-analytic check");
+        profitAnalyticEvent.TriggerEvent();
+        orderFulfilledAnalyticEvent.TriggerEvent();
+        orderSkippedAnalyticEvent.TriggerEvent();
     }
     // update widgets
     void UpdateUI() {
