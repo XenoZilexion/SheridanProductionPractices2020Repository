@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class UIMarketButton : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class UIMarketButton : MonoBehaviour
     public Color disableColor;
     //reference to inventory
     public Inventory inventoryReference;
+
+    public AnalyticsEventTracker fail;
+    public AnalyticsEventTracker success;
     #endregion
     #region setup
     // Start is called before the first frame update
@@ -61,6 +65,11 @@ public class UIMarketButton : MonoBehaviour
         if (inventoryReference.gold >= dataReference.price) {
             inventoryReference.gold -= dataReference.price;
             inventoryReference.stock[dataReference.id] += dataReference.quantityPerPurchase;
+            Debug.Log("successful buy check");
+            success.TriggerEvent();
+        } else {
+            Debug.Log("failed buy check");
+            fail.TriggerEvent();
         }
     }
     #endregion

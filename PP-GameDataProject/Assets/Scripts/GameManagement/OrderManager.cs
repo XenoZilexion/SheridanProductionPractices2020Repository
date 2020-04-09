@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class OrderManager : MonoBehaviour {
     #region variables
     // number of orders per day
     public int orderCount;
+    public int orderSkips;
     //reference to inventory
     public Inventory inventoryReference;
     //foods that can be selected for orders
@@ -20,6 +22,8 @@ public class OrderManager : MonoBehaviour {
     public Text title;
     public Text reward;
     public Image art;
+
+    public AnalyticsEventTracker orderSkipEvent;
     #endregion
     #region updates
     private void Update() {
@@ -31,14 +35,17 @@ public class OrderManager : MonoBehaviour {
     public void StartOrders() {
         activeOrders = true;
         orderCount = 0;
+        orderSkips = 0;
         GenerateOrder();
     }
     // generate order, update ui, set reward
     public void GenerateOrder() {
-        order = orderableFoods[(int)Random.Range(0, orderableFoods.Length)];
-        title.text = "" + order.itemName;
-        reward.text = "" + (order.price * rewardMultiplier);
-        art.sprite = order.cookedArt;
+        if (activeOrders) {
+            order = orderableFoods[(int)Random.Range(0, orderableFoods.Length)];
+            title.text = "" + order.itemName;
+            reward.text = "" + (order.price * rewardMultiplier);
+            art.sprite = order.cookedArt;
+        }
     }
     // complete order, apply reward, if orders still active, generate new order
     public void FulfillOrder() {
@@ -68,6 +75,19 @@ public class OrderManager : MonoBehaviour {
         }
 
 
+    }
+
+    public void OrderSkipped() {
+        Debug.Log("skip check");
+        orderSkipEvent.TriggerEvent();
+        orderSkips++;
+        if (activeOrders) {
+            GenerateOrder();
+        } else {
+            title.text = "";
+            reward.text = "";
+            art.sprite = null;
+        }
     }
     #endregion
 }

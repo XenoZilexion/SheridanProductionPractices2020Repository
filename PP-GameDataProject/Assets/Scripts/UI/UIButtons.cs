@@ -15,6 +15,7 @@ public class UIButtons : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
     }
     public void QuitTheGame() {
+        Debug.Log("quit check");
         Application.Quit();
     }
     //tie in functions for other game management functions to change game 'phase'
