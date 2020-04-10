@@ -15,14 +15,14 @@ public class OrderManager : MonoBehaviour {
     public Food[] orderableFoods;
     //multiplier applied to market value for reward
     public float rewardMultiplier;
-    //current order system (temporary method)
+    //order system
     public Food order;
     public bool activeOrders = false;
     //ui references
     public Text title;
     public Text reward;
     public Image art;
-
+    //analytics
     public AnalyticsEventTracker orderSkipEvent;
     #endregion
     #region updates
@@ -78,12 +78,16 @@ public class OrderManager : MonoBehaviour {
     }
 
     public void OrderSkipped() {
-        Debug.Log("skip check");
+        //Debug.Log("skip check");
+        //analytic event
         orderSkipEvent.TriggerEvent();
+        // skip order
         orderSkips++;
+        // if still taking orders, generate new order
         if (activeOrders) {
             GenerateOrder();
         } else {
+            // set order blank
             title.text = "";
             reward.text = "";
             art.sprite = null;

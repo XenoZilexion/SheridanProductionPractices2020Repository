@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   itemName: Cabbage
-  rawArt: {fileID: 21300000, guid: cf3c98ff0c01b794b8479cf9e1b394a0, type: 3}
-  cookedArt: {fileID: 21300000, guid: cf3c98ff0c01b794b8479cf9e1b394a0, type: 3}
+  rawArt: {fileID: -7995126695386096967, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: 991050738049041272, guid: f6bc4c9a48be3534eb8ab121cb4ed0b5,
+    type: 3}
   price: 1
   quantityPerPurchase: 2
   timeToCook: 1

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   itemName: Egg
-  rawArt: {fileID: 21300000, guid: b3746512b3eb64847b55c4edbf3aa95b, type: 3}
-  cookedArt: {fileID: 21300000, guid: b3746512b3eb64847b55c4edbf3aa95b, type: 3}
+  rawArt: {fileID: 3794456566271914161, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: 825242277019469186, guid: f6bc4c9a48be3534eb8ab121cb4ed0b5,
+    type: 3}
   price: 1
   quantityPerPurchase: 12
   timeToCook: 30

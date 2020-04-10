@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   itemName: Potato
-  rawArt: {fileID: 21300000, guid: 94f815cadbec07e43bc481b1069195af, type: 3}
-  cookedArt: {fileID: 21300000, guid: 0d87f12ed57cc7848a36870cd14d74dc, type: 3}
+  rawArt: {fileID: 8003844380681266660, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: 6975613668499197106, guid: f6bc4c9a48be3534eb8ab121cb4ed0b5,
+    type: 3}
   price: 1
   quantityPerPurchase: 5
   timeToCook: 30

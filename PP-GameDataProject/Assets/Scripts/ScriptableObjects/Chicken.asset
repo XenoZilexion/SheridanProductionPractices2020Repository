@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   itemName: Chicken
-  rawArt: {fileID: 21300000, guid: d7f77fb090009e44c8a97ffb20eace39, type: 3}
-  cookedArt: {fileID: 21300000, guid: 774a7a8cfde43454f87750d63579843e, type: 3}
+  rawArt: {fileID: 1569753721918889050, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: -7913727926026817058, guid: f6bc4c9a48be3534eb8ab121cb4ed0b5,
+    type: 3}
   price: 10
   quantityPerPurchase: 1
   timeToCook: 60

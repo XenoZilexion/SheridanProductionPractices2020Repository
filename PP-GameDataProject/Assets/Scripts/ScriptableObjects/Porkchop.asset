@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   itemName: Porkchop
-  rawArt: {fileID: 21300000, guid: 858d7db57e75233449b721298e5e6435, type: 3}
-  cookedArt: {fileID: 21300000, guid: 24baeb8a0a8342847a8975a5cccd6a8b, type: 3}
+  rawArt: {fileID: 443455958250204155, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: -5271599948398955780, guid: f6bc4c9a48be3534eb8ab121cb4ed0b5,
+    type: 3}
   price: 10
   quantityPerPurchase: 1
   timeToCook: 45

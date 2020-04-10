@@ -35,14 +35,13 @@ public class DayManager : MonoBehaviour {
     // reference to order management
     public OrderManager orderReference;
 
+    // analytics
     public float sessionDuration;
-
     public float profit;
     public AnalyticsEventTracker profitAnalyticEvent;
     public AnalyticsEventTracker orderFulfilledAnalyticEvent;
     public AnalyticsEventTracker orderSkippedAnalyticEvent;
     #endregion
-
     #region updates
     // Update is called once per frame
     void Update() {

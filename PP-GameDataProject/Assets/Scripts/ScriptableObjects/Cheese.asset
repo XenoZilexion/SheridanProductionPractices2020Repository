@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   itemName: Cheese
-  rawArt: {fileID: 21300000, guid: 724ade19696639a41940fc155e9a555b, type: 3}
-  cookedArt: {fileID: 21300000, guid: 724ade19696639a41940fc155e9a555b, type: 3}
+  rawArt: {fileID: 2760357159591830588, guid: 63fa7f5f13add014a863bdffee88d14c, type: 3}
+  cookedArt: {fileID: 2760357159591830588, guid: 63fa7f5f13add014a863bdffee88d14c,
+    type: 3}
   price: 4
   quantityPerPurchase: 5
   timeToCook: 7
